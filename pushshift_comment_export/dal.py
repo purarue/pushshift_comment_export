@@ -1,5 +1,5 @@
 # Since the main purpose for me to create this was to back up my
-# history so I could extend my https://github.com/seanbreckenridge/HPI,
+# history so I could extend my https://github.com/purarue/HPI,
 # this makes the pushshift exports a similar interface to the
 # https://github.com/karlicoss/rexport/ DAL
 # The underlying JSON may have different values, but as long
