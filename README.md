@@ -1,6 +1,6 @@
 Exports all accessible reddit comments for an account using [pushshift](https://pushshift.io/).
 
-[![PyPi version](https://img.shields.io/pypi/v/pushshift_comment_export.svg)](https://pypi.python.org/pypi/pushshift_comment_export) [![Python 3.6|3.7|3.8](https://img.shields.io/pypi/pyversions/pushshift_comment_export.svg)](https://pypi.python.org/pypi/pushshift_comment_export) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PyPi version](https://img.shields.io/pypi/v/pushshift_comment_export.svg)](https://pypi.python.org/pypi/pushshift_comment_export) [![Python 3.9|3.10|3.11|3.12|3.13](https://img.shields.io/pypi/pyversions/pushshift_comment_export.svg)](https://pypi.python.org/pypi/pushshift_comment_export) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 # REDDIT API CHANGES
 
@@ -12,7 +12,7 @@ You should be able to get your historical data through the [data request](https:
 
 ### Install
 
-Requires `python3.6+`
+Requires `python3.9+`
 
 To install with pip, run:
 
