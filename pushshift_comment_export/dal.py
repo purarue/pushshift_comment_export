@@ -10,9 +10,10 @@ import json
 import re
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Any, Dict, Iterator, NamedTuple, cast
+from typing import Any, NamedTuple, cast
+from collections.abc import Iterator
 
-Json = Dict[str, Any]
+Json = dict[str, Any]
 
 # https://www.reddit.com/dev/api
 TYPE_PREFIX = re.compile("t[1-6]_")

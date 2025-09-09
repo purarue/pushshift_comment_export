@@ -1,7 +1,7 @@
 import time
 import json
 from datetime import datetime
-from typing import Optional, Dict, Any, List
+from typing import Optional, Any
 
 import requests
 import click
@@ -27,16 +27,14 @@ def backoff_details(details: Details) -> None:
     max_tries=3,
     on_backoff=backoff_details,
 )
-def ps_request(url: str) -> List[Dict[str, Any]]:
-    logger.debug("Requesting {}...".format(url))
+def ps_request(url: str) -> list[dict[str, Any]]:
+    logger.debug(f"Requesting {url}...")
     resp: requests.Response = requests.get(url)
     time.sleep(2)
     if resp.status_code != 200:
-        logger.error(
-            "Request to {} failed with status code {}".format(url, resp.status_code)
-        )
+        logger.error(f"Request to {url} failed with status code {resp.status_code}")
         resp.raise_for_status()
-    data: List[Dict[str, Any]] = resp.json()["data"]
+    data: list[dict[str, Any]] = resp.json()["data"]
     return data
 
 
@@ -51,9 +49,9 @@ def create_url(reddit_username: str, before: Optional[int]) -> str:
         return BASE_PUSHSHIFT_URL.format(reddit_username) + f"&before={before}"
 
 
-def request_all_comments(reddit_username: str) -> List[Dict[str, Any]]:
+def request_all_comments(reddit_username: str) -> list[dict[str, Any]]:
     prev_created_utc: Optional[int] = None
-    all_comments: List[Dict[str, Any]] = []
+    all_comments: list[dict[str, Any]] = []
     while True:
         url: str = create_url(reddit_username, before=prev_created_utc)
         new_comments = ps_request(url)
