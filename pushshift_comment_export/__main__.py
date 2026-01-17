@@ -42,7 +42,7 @@ def ps_request(url: str) -> list[dict[str, Any]]:
 # to receive comments before
 # once we receive the first chunk of comments, use the epoch time of the
 # last currently known comment, and filter anything that was posted after that
-def create_url(reddit_username: str, before: Optional[int]) -> str:
+def create_url(reddit_username: str, before: int | None) -> str:
     if before is None:
         return BASE_PUSHSHIFT_URL.format(reddit_username)
     else:
@@ -50,7 +50,7 @@ def create_url(reddit_username: str, before: Optional[int]) -> str:
 
 
 def request_all_comments(reddit_username: str) -> list[dict[str, Any]]:
-    prev_created_utc: Optional[int] = None
+    prev_created_utc: int | None = None
     all_comments: list[dict[str, Any]] = []
     while True:
         url: str = create_url(reddit_username, before=prev_created_utc)
