@@ -1,7 +1,7 @@
 import time
 import json
 from datetime import datetime
-from typing import Optional, Any
+from typing import Any
 
 import requests
 import click
